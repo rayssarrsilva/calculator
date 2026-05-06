@@ -1,0 +1,12 @@
+#calculator {
+    height: 600px;
+    width: 400px;
+    background-color: #807A7A;
+    box-shadow: -6px 5px 5px  #807a7a88;
+    margin-top: 50px;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

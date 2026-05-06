@@ -33,3 +33,7 @@ console.log(operate("/", 2, 3));
 let numberOne = 0;
 let numberTwo = 0;
 let operatorSimbol = 0;
+
+const updateVariables = function() {
+
+};
