@@ -5,41 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
     <link rel="stylesheet" href="style.css">
-    <script src="javascript.js"></script>
+    <script src="javascript.js" defer></script>
 </head>
 <body>
     <div class="extern">
         <div id="calculator">
             <div class="top-display">
                 <div id="display-clear">
-                    <div id="display"></div>
+                    <div id="display"><span id="v1"></span><span id="op"></span><span id="v2"></span><span id="equal"></span> <br><span id="result"></span></div>
                     <div id="clear-button">
-                        <button>clear</button>
+                        <button onclick="input(event)">clear</button>
                     </div>
                 </div>
                 <div id="operators">
-                    <button>+</button>
-                    <button>-</button>
-                    <button>/</button>
-                    <button>*</button>
-                    <button>=</button>
+                    <button onclick="clickOperator(event)">+</button>
+                    <button onclick="clickOperator(event)">-</button>
+                    <button onclick="clickOperator(event)">/</button>
+                    <button onclick="clickOperator(event)">*</button>
+                    <button onclick="input(event)">=</button>
                 </div>
             </div>
 
             <div class="bottom-display">
                 <div id="numbers">
-                    <button>0</button>
-                    <button>1</button>
-                    <button>2</button>
-                    <button>3</button>
-                    <button>4</button>
-                    <button>5</button>
-                    <button>6</button>
-                    <button>7</button>
-                    <button>8</button>
-                    <button>9</button>
-                    <button>.</button>
-                    <button>⌫</button>
+                    <button onclick="input(event)">0</button>
+                    <button onclick="input(event)">1</button>
+                    <button onclick="input(event)">2</button>
+                    <button onclick="input(event)">3</button>
+                    <button onclick="input(event)">4</button>
+                    <button onclick="input(event)">5</button>
+                    <button onclick="input(event)">6</button>
+                    <button onclick="input(event)">7</button>
+                    <button onclick="input(event)">8</button>
+                    <button onclick="input(event)">9</button>
+                    <button onclick="input(event)">.</button>
+                    <button onclick="input(event)">⌫</button>
                 </div>
             </div>
         </div>
