@@ -1,6 +1,11 @@
+const display = document.querySelector("#display");
+const v1 = document.querySelector("#v1");
+const op = document.querySelector("#op");
+const v2 = document.querySelector("#v2");
+const buttons = document.querySelectorAll("button");
+const result = document.querySelector("#result");
+
 const add = function(n1, n2) {
-    Number(n1);
-    Number(n2);
     return  n1 + n2;
 };
 
@@ -28,7 +33,7 @@ const operate = function(operator, n1, n2){
     } else {
         return 'ERROR';
     }
-};
+}
 
 console.log(operate("/", 2, 3));
 
@@ -36,17 +41,10 @@ let numberOne = "";
 let numberTwo = "";
 let operatorSimbol = "";
 
-const display = document.querySelector("#display");
-const v1 = document.querySelector("#v1");
-const op = document.querySelector("#op");
-const v2 = document.querySelector("#v2");
-const buttons = document.querySelectorAll("button");
-const result = document.querySelector("#result");
-
 const numbers = ["0", "1", "2","3", "4", "5", "6", "7", "8", "9"];
 const operators = ["+", "-", "/", "*"];
 const remove = ["⌫"];
-const clear = ["clear"];
+const clearButton = ["clear"];
 const equal = ["="];
 
 v2.textContent = "";
@@ -55,41 +53,53 @@ op.textContent = "";
 
 
 function input(event){
-    if (operatorSimbol === ""){
+    if (operatorSimbol === "" && numbers.includes(event.target.textContent)){ // first value
         numberOne = numberOne + event.target.textContent;
         v1.textContent = numberOne;
-    }
+    } 
     
-    if (operators.includes(event.target.textContent)){
-        operatorSimbol = event.target.textContent;
-        op.textContent = operatorSimbol;
-    }
-
-    if (operatorSimbol != "" && numbers.includes(event.target.textContent)){
+    if (operatorSimbol != "" && numbers.includes(event.target.textContent)){ // second value
         numberTwo = numberTwo + event.target.textContent;
         v2.textContent = numberTwo;
     }
 
-    if (event.target.textContent === "="){
+    if (event.target.textContent === "="){ // =
         let operacao = operate(operatorSimbol, Number(numberOne), Number(numberTwo));
+        resultValue = operacao;
         result.textContent = operacao;
     }
 
     if (event.target.textContent === "clear"){
-            numberOne = "";
-            numberTwo = "";
-            operatorSimbol = "";
-            v1.textContent = "";
-            v2.textContent = "";
-            op.textContent = "";
-            result.textContent = "";
-        }
-}
+        clear();
+    }
 
-function clickOperator(event){
     if (operators.includes(event.target.textContent)){
         operatorSimbol = event.target.textContent;
         op.textContent = operatorSimbol;
     }
-    return operatorSimbol;
+
+    /*         numberOne = operacao;
+            numberTwo = "";
+            operatorSimbol = "";
+            v1.textContent = numberOne;
+            v2.textContent = "";
+            op.textContent = "";
+        
+    */    
+
+
 }
+
+function clear(){
+    numberOne = "";
+    numberTwo = "";
+    operatorSimbol = "";
+    v1.textContent = "";
+    v2.textContent = "";
+    op.textContent = "";
+    result.textContent = "";
+}
+
+buttons.forEach(button => {
+    button.addEventListener("click", input);
+});
