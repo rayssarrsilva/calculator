@@ -40,6 +40,7 @@ console.log(operate("/", 2, 3));
 let numberOne = "";
 let numberTwo = "";
 let operatorSimbol = "";
+let resultValue = "";
 
 const numbers = ["0", "1", "2","3", "4", "5", "6", "7", "8", "9"];
 const operators = ["+", "-", "/", "*"];
@@ -53,10 +54,18 @@ op.textContent = "";
 
 
 function input(event){
+
     if (operatorSimbol === "" && numbers.includes(event.target.textContent)){ // first value
         numberOne = numberOne + event.target.textContent;
         v1.textContent = numberOne;
-    } 
+    }
+
+    if (numbers.includes(event.target.textContent) && resultValue != ""){
+        clear();
+        resultValue = "";
+        numberOne = numberOne + event.target.textContent;
+        v1.textContent = numberOne;
+    } // clean everything if a new number is typed before an operator, this, after the result is showed
     
     if (operatorSimbol != "" && numbers.includes(event.target.textContent)){ // second value
         numberTwo = numberTwo + event.target.textContent;
@@ -67,6 +76,18 @@ function input(event){
         let operacao = operate(operatorSimbol, Number(numberOne), Number(numberTwo));
         resultValue = operacao;
         result.textContent = operacao;
+    }
+
+    if (operators.includes(event.target.textContent) && resultValue){
+        numberTwo = "";
+        v2.textContent = numberTwo;
+
+        numberOne = resultValue;
+        v1.textContent = numberOne;
+        operatorSimbol = event.target.textContent;
+        op.operatorSimbol;
+        resultValue = "";
+
     }
 
     if (event.target.textContent === "clear"){
