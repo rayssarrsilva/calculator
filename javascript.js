@@ -113,10 +113,10 @@ function input(event){
     }
 
     if (dot.includes(event.target.textContent)){
-        if (numberOne != "" && !numberOne.includes(dot)){
+        if (numberOne != "" && !numberOne.includes(dot) && numberTwo === ""){
             numberOne = numberOne + ".";
             v1.textContent = numberOne;
-        }
+        } 
         if (numberTwo != "" && !numberTwo.includes(dot)){
             numberTwo = numberTwo + ".";
             v2.textContent = numberTwo;
