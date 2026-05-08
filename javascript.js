@@ -147,3 +147,7 @@ function clear(){
 buttons.forEach(button => {
     button.addEventListener("click", input);
 });
+
+buttons.forEach(button => {
+    button.addEventListener("keydown", input);
+})
