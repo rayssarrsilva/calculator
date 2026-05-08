@@ -1,10 +1,3 @@
-const display = document.querySelector("#display");
-const v1 = document.querySelector("#v1");
-const op = document.querySelector("#op");
-const v2 = document.querySelector("#v2");
-const buttons = document.querySelectorAll("button");
-const result = document.querySelector("#result");
-
 const add = function(n1, n2) {
     return  n1 + n2;
 };
@@ -37,6 +30,13 @@ const operate = function(operator, n1, n2){
 
 console.log(operate("/", 2, 3));
 
+const display = document.querySelector("#display");
+const v1 = document.querySelector("#v1");
+const op = document.querySelector("#op");
+const v2 = document.querySelector("#v2");
+const buttons = document.querySelectorAll("button");
+const result = document.querySelector("#result");
+
 let numberOne = "";
 let numberTwo = "";
 let operatorSimbol = "";
@@ -51,7 +51,6 @@ const equal = ["="];
 v2.textContent = "";
 v1.textContent = ""; 
 op.textContent = "";
-
 
 function input(event){
 
@@ -99,16 +98,18 @@ function input(event){
         op.textContent = operatorSimbol;
     }
 
-    /*         numberOne = operacao;
-            numberTwo = "";
+    if (remove.includes(event.target.textContent)){
+        if (v2.textContent != ""){
+            numberTwo = numberTwo.slice(0, numberTwo.length - 1);
+            v2.textContent = numberTwo;
+        } else if (op.textContent != ""){
             operatorSimbol = "";
+            op.textContent = operatorSimbol;
+        } else if (v1.textContent != ""){
+            numberOne = numberOne.slice(0, numberOne.length - 1);
             v1.textContent = numberOne;
-            v2.textContent = "";
-            op.textContent = "";
-        
-    */    
-
-
+        }
+    }
 }
 
 function clear(){
