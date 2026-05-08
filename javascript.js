@@ -86,9 +86,8 @@ function input(event){
         v1.textContent = numberOne;
         operatorSimbol = event.target.textContent;
         op.operatorSimbol;
-        result.textContent = "";
+        result.textContent = ""; // display difference
         resultValue = "";
-
     }
 
     if (event.target.textContent === "clear"){
@@ -114,7 +113,14 @@ function input(event){
     }
 
     if (dot.includes(event.target.textContent)){
-
+        if (numberOne != "" && !numberOne.includes(dot)){
+            numberOne = numberOne + ".";
+            v1.textContent = numberOne;
+        }
+        if (numberTwo != "" && !numberTwo.includes(dot)){
+            numberTwo = numberTwo + ".";
+            v2.textContent = numberTwo;
+        }
     }
 }
 
