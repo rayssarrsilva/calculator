@@ -11,5 +11,29 @@ This calculator allows user to: sum, subtract, divise and multiply. It have the 
 ## Demo
 <img width="1913" height="912" alt="calculadora" src="https://github.com/user-attachments/assets/07fdced2-0130-4919-bae6-3b3139ba404a" />
 
+## installation and collaborations
+1. Fork the repository
+2. open the HTML file to play with it in the console
+3. create another branch
+4. do some modifications inside the new branch
+5. pull request it and wait for some feedback
+
+## Features
+- Dot button: allow to create decimal numbers and return numbers with decimal results
+- clear button: erase every number in the display including the operators and result
+- backspace button: remove the last digit be it number in the first operand, second operand or operator
+- calculate all size of numbers
+- sum, subtract, divise or multiply big and small numbers
+
+## How to use 
+- Digit one number
+- digit one operator
+- digit one number
+- digit another operator to see the result and already make another calculus
+- Or digit the equal symbol to have the calculus result
+
 ## Author
 Rayssa r. r. silva 
+
+## Credits 
+The odin project | Foundations | Javascript Basics | Project: Calculator 
