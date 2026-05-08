@@ -47,6 +47,7 @@ const operators = ["+", "-", "/", "*"];
 const remove = ["⌫"];
 const clearButton = ["clear"];
 const equal = ["="];
+const dot = ["."];
 
 v2.textContent = "";
 v1.textContent = ""; 
@@ -85,6 +86,7 @@ function input(event){
         v1.textContent = numberOne;
         operatorSimbol = event.target.textContent;
         op.operatorSimbol;
+        result.textContent = "";
         resultValue = "";
 
     }
@@ -109,6 +111,10 @@ function input(event){
             numberOne = numberOne.slice(0, numberOne.length - 1);
             v1.textContent = numberOne;
         }
+    }
+
+    if (dot.includes(event.target.textContent)){
+
     }
 }
 
