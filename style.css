@@ -9,7 +9,9 @@
     justify-content: space-around; 
     border-radius: 50px;
 }
-
+body {
+    background-color: whitesmoke;
+}
 /*Centraliza e organiza os números*/
 .bottom-display #numbers {
     display: flex;
