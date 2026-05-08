@@ -122,6 +122,16 @@ function input(event){
             v2.textContent = numberTwo;
         }
     }
+
+    if (operators.includes(event.target.textContent) && numberTwo != ""){
+        let operacao = operate(operatorSimbol, Number(numberOne), Number(numberTwo));
+        operatorSimbol = event.target.textContent;
+        numberOne = operacao;
+        v1.textContent = numberOne;
+        op.textContent = operatorSimbol;
+        numberTwo = "";
+        v2.textContent = numberTwo;
+    }
 }
 
 function clear(){
